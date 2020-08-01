@@ -161,25 +161,6 @@ const search = async (_: any, { title }: { title: string }) => {
 	return foundMovies;
 };
 
-// extract mp4 file url from streaming link ( used in the react native app )
-const mp4FileUrl = async (_: any, { url }: { url: string }) => {
-	if (url.trim().length === 0) throw new Error('Url invalid');
-	try {
-		const { data } = (await axios.get(url)) as { data: string };
-		const mp4FileIndex = data.lastIndexOf('file:"https://');
-		const fileExtensionIndex = data.indexOf('mp4');
-
-		return data.slice(
-			mp4FileIndex + 'file:"'.length,
-			fileExtensionIndex + 'mp4'.length
-		);
-	} catch {
-		throw new Error(
-			"Can't access url, please try again or enter a valid url"
-		);
-	}
-};
-
 export const resolvers = {
 	Query: {
 		movie,
@@ -191,6 +172,5 @@ export const resolvers = {
 		moviesByLetterNumber,
 		moviesByGenreNumber,
 		search,
-		mp4FileUrl,
 	},
 };

@@ -29,6 +29,5 @@ export const typeDefs = gql`
 		moviesByLetter(letter: String!, pos: Int!, count: Int!): [Movie!]!
 		moviesByGenre(genre: String!, pos: Int!, count: Int!): [Movie!]!
 		search(title: String!): [Movie!]!
-		mp4FileUrl(url: String!): String!
 	}
 `;
