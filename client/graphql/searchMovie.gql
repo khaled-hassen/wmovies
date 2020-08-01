@@ -1,0 +1,11 @@
+query SearchMovies($title: String!) {
+	search(title: $title) {
+		id
+		title
+		year
+		img {
+			src
+			alt
+		}
+	}
+}

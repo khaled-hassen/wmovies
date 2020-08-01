@@ -1,0 +1,11 @@
+query GetMoviesByLetter($letter: String!, $pos: Int!, $count: Int!) {
+	moviesByLetter(letter: $letter, pos: $pos, count: $count) {
+		id
+		title
+		year
+		img {
+			src
+			alt
+		}
+	}
+}

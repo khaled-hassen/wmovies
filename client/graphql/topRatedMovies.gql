@@ -1,0 +1,11 @@
+{
+	top30Rated {
+		id
+		title
+		year
+		img {
+			src
+			alt
+		}
+	}
+}

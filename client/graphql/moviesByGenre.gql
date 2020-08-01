@@ -1,0 +1,11 @@
+query GetMoviesByGenre($genre: String!, $pos: Int!, $count: Int!) {
+	moviesByGenre(genre: $genre, pos: $pos, count: $count) {
+		id
+		title
+		year
+		img {
+			src
+			alt
+		}
+	}
+}

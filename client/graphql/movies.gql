@@ -1,0 +1,11 @@
+query GetMovies($pos: Int!, $count: Int!) {
+	movies(pos: $pos, count: $count) {
+		id
+		title
+		year
+		img {
+			src
+			alt
+		}
+	}
+}
